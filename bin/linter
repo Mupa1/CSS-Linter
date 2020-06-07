@@ -1,2 +1,19 @@
 #! /usr/bin/env ruby
-puts 'Hello!'
+
+puts '----------------------------------------------------------------'
+puts '----------------------------------------------------------------'
+puts
+puts 'CSS LINTER'
+puts
+puts '----------------------------------------------------------------'
+puts '----------------------------------------------------------------'
+puts
+puts 'Checking file for errors...'
+sleep(2)
+puts
+
+file_path = ARGV.shift
+user_file = File.open(file_path)
+file_data = user_file.readlines
+puts
+puts 'Error Checking Completed'.green
