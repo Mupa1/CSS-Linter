@@ -32,4 +32,12 @@ module Errors
 
     puts 'Error: '.red + 'Unexpexted space before colon " :" on' + " line:[:#{data_index}:]".yellow
   end
+
+  def trailing_white_space?(file_data, data_index)
+    if file_data.match?(/([^\s]\n)$/) || file_data.match?(/^\n$/)
+      true
+    else
+      puts 'Error: '.red + 'Trailing white spaces on' + " line:[:#{data_index}:]".yellow
+    end
+  end
 end
