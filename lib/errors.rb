@@ -14,4 +14,16 @@ module Errors
 
     puts 'Error: '.red + 'Expecting two spaced indentation on' + " line:[:#{data_index}:]".yellow
   end
+
+  def space_after_colon?(file_data, data_index)
+    return unless file_data.match?(/(:\w+)/)
+
+    puts 'Error: '.red + 'Expecting single space after colon ":") on' + " line:[:#{data_index}:]".yellow
+  end
+
+  def space_before_colon?(file_data, data_index)
+    return unless file_data.match?(/( :)/)
+
+    puts 'Error: '.red + 'Unexpexted space before colon " :" on' + " line:[:#{data_index}:]".yellow
+  end
 end
