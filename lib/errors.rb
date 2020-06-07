@@ -9,6 +9,12 @@ module Errors
     end
   end
 
+  def space_before_semicolon?(file_data, data_index)
+    return unless file_data.match?(/( ;)+/)
+
+    puts 'Error: '.red + 'Unexpected white space before semicolon " ;" on' + " line:[:#{data_index}:]".yellow
+  end
+
   def indentation_error?(file_data, data_index)
     return unless file_data.match?(/^\w+\s*\w*:/)
 
