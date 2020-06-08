@@ -8,6 +8,7 @@ class ErrorChecker
     @file_data_arr = file_data_arr
   end
 
+  # rubocop: disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
   def display_error
     counter = 0
     file_data_arr.each_with_index do |file_data, index|
@@ -21,4 +22,5 @@ class ErrorChecker
     end
     puts 'No Errors Found'.green if counter.zero?
   end
+  # rubocop: enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 end

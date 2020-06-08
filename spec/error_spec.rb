@@ -107,5 +107,4 @@ RSpec.describe Errors do
       end
     end
   end
-
 end
