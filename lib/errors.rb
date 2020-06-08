@@ -16,7 +16,7 @@ module Errors
   end
 
   def indentation_error?(file_data, data_index)
-    return true unless file_data.match?(/^\w+\s*\w*:/)
+    return true unless file_data.match?(/^\w+\s*-.\w*:/) || file_data.match?(/^\w+\s*\w*:/)
 
     puts 'Error: '.red + 'Expecting two spaced indentation on' + " line:[:#{data_index}:]".yellow
   end
