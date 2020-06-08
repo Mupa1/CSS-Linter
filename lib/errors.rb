@@ -10,25 +10,25 @@ module Errors
   end
 
   def space_before_semicolon?(file_data, data_index)
-    return unless file_data.match?(/( ;)+/)
+    return true unless file_data.match?(/( ;)+/)
 
     puts 'Error: '.red + 'Unexpected white space before semicolon " ;" on' + " line:[:#{data_index}:]".yellow
   end
 
   def indentation_error?(file_data, data_index)
-    return unless file_data.match?(/^\w+\s*\w*:/)
+    return true unless file_data.match?(/^\w+\s*\w*:/)
 
     puts 'Error: '.red + 'Expecting two spaced indentation on' + " line:[:#{data_index}:]".yellow
   end
 
   def space_after_colon?(file_data, data_index)
-    return unless file_data.match?(/(:\w+)/)
+    return true unless file_data.match?(/(:\w+)/)
 
     puts 'Error: '.red + 'Expecting single space after colon ":") on' + " line:[:#{data_index}:]".yellow
   end
 
   def space_before_colon?(file_data, data_index)
-    return unless file_data.match?(/( :)/)
+    return true unless file_data.match?(/( :)/)
 
     puts 'Error: '.red + 'Unexpexted space before colon " :" on' + " line:[:#{data_index}:]".yellow
   end

@@ -9,14 +9,16 @@ class ErrorChecker
   end
 
   def display_error
+    counter = 0
     file_data_arr.each_with_index do |file_data, index|
       data_index = index + 1
-      missing_ending_semicolon?(file_data, data_index)
-      space_before_semicolon?(file_data, data_index)
-      indentation_error?(file_data, data_index)
-      space_after_colon?(file_data, data_index)
-      space_before_colon?(file_data, data_index)
-      trailing_white_space?(file_data, data_index)
+      counter += 1 unless missing_ending_semicolon?(file_data, data_index)
+      counter += 1 unless space_before_semicolon?(file_data, data_index)
+      counter += 1 unless indentation_error?(file_data, data_index)
+      counter += 1 unless space_after_colon?(file_data, data_index)
+      counter += 1 unless space_before_colon?(file_data, data_index)
+      counter += 1 unless trailing_white_space?(file_data, data_index)
     end
+    puts 'No Errors Found'.green if counter.zero?
   end
 end
