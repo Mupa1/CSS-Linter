@@ -42,7 +42,6 @@ RSpec.describe Errors do
 
   describe '#indentation_error?' do
     let(:file_data) { 'font-size: 2rem;' }
-    let(:file_data1) { '    font-size: 2rem;' }
     context 'has two spaced indentation before the declaration' do
       it 'returns true' do
         expect(indentation_error?(correct_sample, data_index)).to be true
@@ -54,6 +53,23 @@ RSpec.describe Errors do
       end
       it 'returns nil and displays an error message' do
         expect(indentation_error?(file_data, data_index)).to be nil
+      end
+    end
+  end
+
+  describe '#space_after_colon?' do
+    let(:file_data) { '  font-size:2rem;' }
+    context 'has a single space after the colon on the declaration' do
+      it 'returns true' do
+        expect(space_after_colon?(correct_sample, data_index)).to be true
+      end
+    end
+    context 'has no space after the colon on the declaration' do
+      it 'does not return true' do
+        expect(space_after_colon?(file_data, data_index)).not_to be true
+      end
+      it 'returns nil and displays an error message' do
+        expect(space_after_colon?(file_data, data_index)).to be nil
       end
     end
   end
