@@ -18,4 +18,20 @@ RSpec.describe ErrorChecker do
       end
     end   
   end
+
+  describe "#display_error" do
+    context 'when the given file has errors' do
+      it "it shows error messages and does not return true" do
+        expect(error_checker.display_error).not_to eql(true)
+      end
+    end
+    context 'when the given file does not have errors' do
+      let(:user_file2) { File.open('stylesheet_copy.css') }
+      let(:file_data2) { user_file2.readlines }
+      let(:error_checker2) { ErrorChecker.new(file_data2) }
+      it "returns nil and displays a message 'No Errors Found'" do
+        expect(error_checker2.display_error).to eql(nil)
+      end
+    end   
+  end
 end
