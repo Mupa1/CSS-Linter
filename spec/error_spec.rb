@@ -91,4 +91,21 @@ RSpec.describe Errors do
     end
   end
 
+  describe '#trailing_white_space?' do
+    let(:file_data) { '  font-size: 2rem;    ' }
+    context 'has no trailing white spaces after the declaration' do
+      it 'returns true' do
+        expect(trailing_white_space?(correct_sample, data_index)).to be true
+      end
+    end
+    context 'has trailing white spaces after the declaration' do
+      it 'does not return true' do
+        expect(trailing_white_space?(file_data, data_index)).not_to be true
+      end
+      it 'returns nil and displays an error message' do
+        expect(trailing_white_space?(file_data, data_index)).to be nil
+      end
+    end
+  end
+
 end

@@ -34,7 +34,7 @@ module Errors
   end
 
   def trailing_white_space?(file_data, data_index)
-    if file_data.match?(/([^\s]\n)$/) || file_data.match?(/^\n$/)
+    if !file_data.match?(/(?<=\S)[\t ]+$/) || file_data.match?(/^\n$/)
       true
     else
       puts 'Error: '.red + 'Trailing white spaces on' + " line:[:#{data_index}:]".yellow
