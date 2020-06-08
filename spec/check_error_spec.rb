@@ -7,13 +7,13 @@ RSpec.describe ErrorChecker do
 
   describe "#initialize" do
     context 'given required argument' do
-      it "creates the ErrorChecker class instance" do
+      it "creates an instance of the ErrorChecker class" do
         expect(ErrorChecker.class).to eql(Class)
         expect(error_checker.file_data_arr).to eql(file_data)
       end
     end
     context 'missing argument' do
-      it "does not create the ErrorChecker class instance" do
+      it "does not create an instance of the ErrorChecker class" do
         expect { ErrorChecker.new }.to raise_error(ArgumentError)
       end
     end   
