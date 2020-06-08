@@ -14,12 +14,14 @@ RSpec.describe Errors do
       end
     end
     context 'missing a semicolon at the end of a declaration' do
-      it 'does not return true and displays the error' do
+      it 'does not return true' do
         expect(missing_ending_semicolon?(file_data, data_index)).not_to be true
       end
-      it 'returns nil' do
+      it 'returns nil and it displays an error message' do
         expect(missing_ending_semicolon?(file_data, data_index)).to be nil
       end
     end
   end
+
+
 end
