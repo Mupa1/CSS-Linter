@@ -23,5 +23,21 @@ RSpec.describe Errors do
     end
   end
 
+  describe '#space_before_semicolon?' do
+    let(:file_data) { '  font-size: 2rem ;' }
+    context 'has no space before the semicolon at the end of a declaration' do
+      it 'returns true' do
+        expect(space_before_semicolon?(correct_sample, data_index)).to be true
+      end
+    end
+    context 'has a space before the semicolon at the end of a declaration' do
+      it 'does not return true' do
+        expect(space_before_semicolon?(file_data, data_index)).not_to be true
+      end
+      it 'returns nil and displays an error message' do
+        expect(space_before_semicolon?(file_data, data_index)).to be nil
+      end
+    end
+  end
 
 end
