@@ -1,5 +1,5 @@
 # CSS-Linter
-This is a simple CSS linter for beginners that checks on some syntax errors and prints an error messege which also indicated the line of the specific syntax error.
+This is a simple CSS linter for beginners that checks on some syntax errors and prints an error message which also indicated the line of the specific syntax error.
 
 ## Built With
 
