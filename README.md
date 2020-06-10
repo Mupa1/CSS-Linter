@@ -79,7 +79,7 @@ Error: Trailing white spaces on line:[:2:]
 ## Getting Started
 - Ensure you have Ruby installed on your computer.
 - ```$ git clone https://github.com/Mupa1/CSS-Linter.git``` to your local computer.
-- Navigate to the root directory and git checkout css-linter
+- Navigate to the root directory
 
 ## Usage
 
