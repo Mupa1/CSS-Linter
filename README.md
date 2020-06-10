@@ -1,6 +1,8 @@
 # CSS-Linter
 This is a simple CSS linter for beginners that checks on some syntax errors and prints an error message which also indicated the line of the specific syntax error.
 
+![screenshot](./images/output_errors.jpeg)
+
 ## Built With
 
 - Ruby
@@ -110,6 +112,13 @@ Feel free to check the [issues page](https://github.com/Mupa1/CSS-Linter/issues)
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## Acknowledgements
+
+* [Microverse](https://www.microverse.org/)
+* [The Odin Project](https://www.theodinproject.com/)
+* [Ruby Documentation](https://www.ruby-lang.org/en/documentation/)
+* [Rubular Ruby Regular Expression Editor](https://rubular.com/)
 
 ## 📝 License
 
