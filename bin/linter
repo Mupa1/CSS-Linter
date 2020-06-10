@@ -1,5 +1,5 @@
 #! /usr/bin/env ruby
-require_relative '../lib/check_error.rb'
+require_relative '../lib/error_checker.rb'
 
 puts '----------------------------------------------------------------'
 puts '----------------------------------------------------------------'

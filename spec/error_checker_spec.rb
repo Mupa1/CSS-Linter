@@ -1,4 +1,4 @@
-require_relative '../lib/check_error.rb'
+require_relative '../lib/error_checker.rb'
 
 RSpec.describe ErrorChecker do
   let(:user_file2) { File.open('stylesheet_copy.css') }
