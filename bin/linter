@@ -1,0 +1,22 @@
+#! /usr/bin/env ruby
+require_relative '../lib/error_checker.rb'
+
+puts '----------------------------------------------------------------'
+puts '----------------------------------------------------------------'
+puts
+puts 'CSS LINTER'
+puts
+puts '----------------------------------------------------------------'
+puts '----------------------------------------------------------------'
+puts
+puts 'Checking file for errors...'
+sleep(2)
+puts
+
+file_path = ARGV.shift
+user_file = File.open(file_path)
+file_data = user_file.readlines
+error_checker = ErrorChecker.new(file_data)
+error_checker.display_error
+puts
+puts 'Error Checking Completed'.green
